@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>uniswap_demo</title>
+    <meta charset="UTF-8">
+    <script src="index.js"></script>
+  </head>
+
+    <body>
+    <h1>uniswap交易所</h1>
+    <br><br>
+    <div>
+    查询某个交易合约地址：<br>
+    <input type="text" id="tokenAAddress" value="请输入代币A地址">
+    <input type="text" id="tokenBAddress" value="请输入代币B地址">
+    <input type="button" value="查询" onclick="App.querryExchangeByToken()"></input><br><br>
+    </div>
+    <div>
+    为代币创建交易合约:<br>
+    <input type="text" id="tokenAToBeCreated" value="请输入代币A地址">
+    <input type="text" id="tokenBToBeCreated" value="请输入代币B地址">
+    <input type="button" value="创建" onclick="App.createExchange()">
+    </div>
+    <div>
+    <br><br><br>
+    当前进行交易合约地址：<span id="exchangeNow"></span><br>
+    切换至交易合约：<input type="text" id="exchangeToChange" value="请输入要切换的交易合约地址">
+    <input type="button" value="切换" onclick="App.changeExchange()">
+    </div>
+    <br><br>
+    <div>
+    <input type="button" value="查看交易池里代币A数量" onclick="App.showBalanceOfTokenA()">
+    <input type="button" value="查看交易池里代币B数量" onclick="App.showBalanceOfTokenB()">
+    <input type="button" value="查看流动性" onclick="App.showLiquidity()">
+    <input type="button" value="查看我增加过的代币A流动性" onclick="App.showAddedTokenA()">
+    <input type="button" value="查看我增加过的代币B流动性" onclick="App.showAddedTokenB()"><br><br>
+    <input type="text" value="请输入要使用的代币枚数" id="tokenToUse">
+    <input type="button" value="估计代币A价格" onclick="App.showTokenAPrice()">
+    <input type="button" value="估计代币B价格" onclick="App.showTokenBPrice()">
+    </div>
+    <div>
+    <br><br>
+    增加流动性：<input type="text" value="请输入要增加的代币A数量" id="tokenAToAdd">
+              <input type="text" value="请输入要增加的代币B数量" id="tokenBToAdd">
+              <input type="button" value="提交" onclick="App.addLiquidity()"><br>
+    减少流动性：<input type="text" value="请输入要减少的代币A数量" id="tokenAToRemove">
+              <input type="text" value="请输入要减少的代币B数量" id="tokenBToRemove">
+              <input type="button" value="提交" onclick="App.removeLiquidity()"><br>
+    </div>
+    <div>
+      <br><br>
+    进行交易：<br>
+    使用<input type="text" value="在此输入" id="tokenAToUse">数量的TokenA来购买TokenB<input type="button" value="确认" onclick="App.buyByTokenA()"><br>
+    使用<input type="text" value="在此输入" id="tokenBToUse">数量的TokenB来购买TokenA<input type="button" value="确认" onclick="App.buyByTokenB()"><br>
+    </div>
+    </body>
+</html>
